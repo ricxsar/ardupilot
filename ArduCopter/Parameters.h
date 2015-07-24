@@ -313,6 +313,9 @@ public:
         k_param_acro_yaw_p, // 244
 
         // 254,255: reserved
+        
+        //Custom Parameters
+        k_param_model, // 245
     };
 
     AP_Int16        format_version;
@@ -442,6 +445,10 @@ public:
     AP_Float                acro_balance_pitch;
     AP_Int8                 acro_trainer;
     AP_Float                acro_expo;
+
+
+    //Custom parameters
+    AP_Int32                model;  //model
 
     // PI/D controllers
 #if FRAME_CONFIG == HELI_FRAME

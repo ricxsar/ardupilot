@@ -66,6 +66,13 @@ const AP_Param::Info var_info[] PROGMEM = {
     // @User: Standard
     GSCALAR(serial1_baud,           "SERIAL1_BAUD",   SERIAL1_BAUD/1000),
 
+    // @Param: MODEL
+    // @DisplayName: Model
+    // @Description: Unique model in every drone
+    // @Range: 0 2147483000
+    // @User: Standard
+    GSCALAR(model, "MODEL", MODEL_DEFAULT),
+
 #if MAVLINK_COMM_NUM_BUFFERS > 2
     // @Param: SERIAL2_BAUD
     // @DisplayName: Telemetry Baud Rate

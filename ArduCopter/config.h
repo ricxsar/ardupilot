@@ -837,4 +837,8 @@
 #define FIRMWARE_STRING THISFIRMWARE " (" GIT_VERSION ")"
 #endif
 
+#ifndef MODEL_DEFAULT
+ # define MODEL_DEFAULT      2147483000     // default value for my new parameter
+#endif
+
 #endif // __ARDUCOPTER_CONFIG_H__

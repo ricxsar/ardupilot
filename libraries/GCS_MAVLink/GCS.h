@@ -49,6 +49,7 @@ enum ap_message {
     MSG_RANGEFINDER,
     MSG_TERRAIN,
     MSG_BATTERY2,
+    MSG_DRONE_MODEL,
     MSG_RETRY_DEFERRED // this must be last
 };
 

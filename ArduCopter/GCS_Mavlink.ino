@@ -29,6 +29,11 @@ static void gcs_send_deferred(void)
     gcs_send_message(MSG_RETRY_DEFERRED);
 }
 
+static void gcs_send_drone_model(void)
+{
+    gcs_send_message(MSG_DRONE_MODEL);
+}
+
 /*
  *  !!NOTE!!
  *
@@ -126,6 +131,12 @@ static NOINLINE void send_attitude(mavlink_channel_t chan)
         gyro.x,
         gyro.y,
         gyro.z);
+}
+
+static NOINLINE void send_drone_model(mavlink_channel_t chan)
+{
+    mavlink_msg_drone_model_send(chan,
+        THISDRONEMODEL);
 }
 
 #if AC_FENCE == ENABLED
@@ -626,6 +637,11 @@ bool GCS_MAVLINK::try_send_message(enum ap_message id)
 
     case MSG_RETRY_DEFERRED:
         break; // just here to prevent a warning
+
+    case MSG_DRONE_MODEL:
+        CHECK_PAYLOAD_SIZE(DRONE_MODEL);
+        send_drone_model(chan);
+        break;
     }
 
     return true;

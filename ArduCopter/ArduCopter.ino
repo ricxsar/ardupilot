@@ -1,6 +1,7 @@
 /// -*- tab-width: 4; Mode: C++; c-basic-offset: 4; indent-tabs-mode: nil -*-
 
 #define THISFIRMWARE "ArduCopter V3.2.1"
+#define THISDRONEMODEL "13WX78kS011"
 /*
    This program is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -865,6 +866,7 @@ static const AP_Scheduler::Task scheduler_tasks[] PROGMEM = {
     { crash_check,          10,      20 },
     { gcs_check_input,	     2,     550 },
     { gcs_send_heartbeat,  100,     150 },
+    { gcs_send_drone_model,100,     150 },
     { gcs_send_deferred,     2,     720 },
     { gcs_data_stream_send,  2,     950 },
     { update_mount,          2,     450 },

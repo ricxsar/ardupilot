@@ -444,5 +444,10 @@
       <field type="int16_t" name="current_battery">Battery current, in 10*milliamperes (1 = 10 milliampere), -1: autopilot does not measure the current</field>
     </message>
 
+    <message id="184" name="DRONE_MODEL">
+      <description>This message get drone's model.</description>
+      <field type="char[15]" name="model">Drone model.</field>
+    </message>
+
      </messages>
 </mavlink>
